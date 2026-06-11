@@ -1,0 +1,54 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+                
+                base_layer {
+                        display-name = "base_layer";
+// ---------------------------------------------------------------------------------
+// | clear  |  1  |  2  |  3  |  4    |  5      |         |  6    |  7      |  8     |  9      |  0     |       |
+// | TAB  |  Q  |  W  |  E  |  R    |  T      |         |  Z    |  U      |  I     |  O      |  P     | VOLUP |
+// | CAPS |  A  |  S  |  D  |  F    |  G      |         |  H    |  J      |  K     |  L      |  AA    | VOLDO |
+// | PSCRN|  Y  |  X  |  C  |  V    |  B      |         |  N    |  M      |  ,     |  .      |  -     | MUTE  |
+// | prev | PP  | next| BSCP | SPACE | ENTER   |         | LAYER | SPACE   | LSHIFT | Br up   | Br do  |       |
+                        bindings = <
+   &bt BT_CLR_ALL       &kp N1           &kp N2       &kp N3     &kp N4            &kp N5           &kp N6  &kp N7     &kp N8      &kp N9          &kp N0                &kp N1
+   &studio_unlock       &kp Q            &kp W        &kp E      &kp R             &kp T            &kp Z   &kp U      &kp I       &kp O           &kp P                 &kp C_VOL_UP
+   &bootloader             &kp A            &kp S        &kp D      &kp F             &kp G            &kp H   &kp J      &kp K       &kp L           &kp O                 &kp C_VOL_DN
+   &kp PSCRN            &kp Y            &kp X        &kp C      &kp V             &kp B            &kp N   &kp M      &kp COMMA   &kp DOT         &kp MINUS             &kp C_MUTE
+   &kp C_PREV           &kp C_PP         &kp C_NEXT   &kp BSPC   &kp SPACE         &kp ENTER        &mo 1   &kp SPACE  &kp LSHIFT  &kp C_BRI_INC   &kp C_BRI_DEC         &kp N1
+                        >;
+                };
+                mod_layer_1 {
+                        display-name = "mod_layer_1";
+// ------------------------------------------------------------------------------------------------------------
+// |       |       |       |       |       |       |          |       |       |       |       |       | BTCLR |
+// |       |   !   |   ?   |   {   |   }   |       |          |   \   |  /    |   UP  |   *   |   $   |       |
+// |       |   [   |   ]   |   (   |   )   |       |          |       |  LEFT | DOWN  | RIGHT |  PIPE |       | 
+// |       |   #   |   %   |   =   |   +   |       |          |       |   &   |   <   |   >   |   @   |       |
+// |       |       |       |       |       |       |          |       |       |       |       |       |       |
+                        bindings = <
+   &none    &none     &none       &none     &none     &none         &none       &none           &none      &none       &none        &none
+   &none    &kp EXCL  &kp QMARK   &kp LBRC  &kp RBRC  &none         &kp BSLH    &none           &kp UP     &kp STAR    &kp DOLLAR   &none
+   &none    &kp LBKT  &kp RBKT    &kp LPAR  &kp RPAR  &none         &none       &kp LEFT        &kp DOWN   &kp RIGHT   &kp PIPE     &none
+   &none    &kp HASH  &kp PRCNT   &kp EQUAL &kp PLUS  &none         &none       &kp AMPS        &kp LT     &kp GT      &kp AT       &none
+   &none    &none     &none       &none     &none     &none         &none       &none           &none      &none       &none        &none
+                        >;
+                };
+
+                extra_layer_2 {
+                        status = "reserved";
+                };
+
+                extra_layer_3 {
+                        status = "reserved";
+                };
+
+                extra_layer_4 {
+                        status = "reserved";
+                };
+        };
+};

@@ -1,0 +1,283 @@
+meta:
+  engine: 4.1.0
+
+units:
+  #proxy spacing variables
+  kx: u
+  ky: u
+  #padding variables 
+  px: kx + 4
+  py: ky + 4
+
+points:
+  zones:
+    matrix:
+      anchor:
+          shift: [150, -130]
+      columns:
+        outer:
+          rows.bottom.skip: true
+          key.column_net: P9
+        pinky:
+          key.column_net: P8
+          rows.bottom.column_net: P9
+        ring:
+          key.stagger: 7.5
+          key.column_net: P7
+          rows.bottom.column_net: P8
+        middle:
+          key.stagger: 3
+          key.column_net: P6
+          rows.bottom.column_net: P7
+        index:
+          rows.bottom.skip: true
+          key.stagger: -3
+          key.column_net: P5
+        inner:
+          rows.bottom.skip: true
+          key.stagger: -2
+          key.column_net: P4
+      rows:
+        bottom:
+          row_net: P10
+        home:
+          row_net: P16
+        top:
+          row_net: P14
+        num:
+          row_net: P15
+        nums:
+          row_net: P18
+    thumbs:
+      anchor:
+        ref: matrix_index_bottom
+        shift: [-0.2,-0.8ky]
+      columns:
+        filler:
+          key.splay: 4
+          key.column_net: P6
+        layer:
+          key.splay: -25
+          key.shift: [4.8,-4]
+          key.column_net: P5
+        space:
+            key:
+              width: kx
+              splay: -16 
+              shift: [9,-7]
+              column_net: P4
+      rows:
+        cluster:
+          row_net: P10
+
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [u, u]
+  board:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_nums
+          shift: [-0.505px, py]
+        - ref: matrix_outer_nums
+          shift: [5.75px, py]
+        - ref: matrix_outer_nums
+          shift: [5.75px, -0.56py]
+        - ref: matrix_outer_nums
+          shift: [5.75px, -5py]
+        - ref: matrix_outer_nums
+          shift: [5px, -5py]
+        - ref: matrix_outer_nums
+          shift: [-0.505px, -3.55py]
+      fillet: 2
+  cutouts:
+    - what: rectangle
+      size: [13,0.5]
+      fillet: 1
+  rounded_foam:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_nums
+          shift: [0, 0]
+        - ref: matrix_outer_nums
+          shift: [70, 0]
+        - ref: matrix_outer_nums
+          shift: [70, -10.5]
+        - ref: matrix_outer_nums
+          shift: [65.5, -10.5]
+        - ref: matrix_outer_nums
+          shift: [65.5, -4.5]
+        - ref: matrix_outer_nums
+          shift: [4.5, -4.5]
+        - ref: matrix_outer_nums
+          shift: [4.5, -10.5]
+        - ref: matrix_outer_nums
+          shift: [0, -10.5]
+        - ref: matrix_outer_nums
+          shift: [0, -4.5]
+      fillet: 1
+  battery_foam:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_nums
+          shift: [0, 0]
+        - ref: matrix_outer_nums
+          shift: [35, 0]
+        - ref: matrix_outer_nums
+          shift: [35, -10.5]
+        - ref: matrix_outer_nums
+          shift: [30.5, -10.5]
+        - ref: matrix_outer_nums
+          shift: [30.5, -4.5]
+        - ref: matrix_outer_nums
+          shift: [4.5, -4.5]
+        - ref: matrix_outer_nums
+          shift: [4.5, -10.5]
+        - ref: matrix_outer_nums
+          shift: [0, -10.5]
+        - ref: matrix_outer_nums
+          shift: [0, -4.5]
+      fillet: 1
+  battery_box:
+    - what: rectangle
+      size: [32, 20]
+      where:
+        ref.aggregate.parts: [matrix_inner_nums, matrix_inner_nums]
+      adjust:
+        shift: [23.1, -39]  
+        rotate: 90 
+  batcutout:
+    - what: rectangle
+      size: [43, 22]
+      fillet: 2
+      where:
+        ref.aggregate.parts: [matrix_inner_nums, matrix_inner_nums]
+      adjust:
+        shift: [23.1, -43]  
+        rotate: 90 
+  plate:
+    - what: polygon
+      operation: stack
+      points:
+        - ref: matrix_outer_nums
+          shift: [-0.505px, py]
+        - ref: matrix_outer_nums
+          shift: [4.65px, py]
+        - ref: matrix_outer_nums
+          shift: [4.65px, -0.56py]
+        - ref: matrix_outer_nums
+          shift: [5.75px, -0.56py]
+        - ref: matrix_outer_nums
+          shift: [5.75px, -5py]
+        - ref: matrix_outer_nums
+          shift: [5px, -5py]
+        - ref: matrix_outer_nums
+          shift: [-0.505px, -3.55py]
+      fillet: 2
+  combo1:
+    - name: board
+    - operation: subtract
+      name: raw
+  mx_holes:      
+    - what: rectangle
+      where: true
+      size: [14, 14]
+  caps:                  
+    - what: rectangle
+      where: true
+      size: [kx-1, ky-1]     
+      corner: 1
+  platecut:
+    - name: plate
+    - operation: add
+      name: rounded_foam
+      adjust:
+        shift: [13, 29.5]
+    - operation: add
+      name: rounded_foam
+      adjust:
+        rotate: 90
+        shift: [77.89, -270]
+    - operation: add
+      name: rounded_foam
+      adjust:
+        rotate: 165.25
+        shift: [354.1, -255]
+    - operation: add
+      name: battery_foam
+      adjust:
+        shift: [342.75,25]
+        rotate: -90
+    - operation: subtract
+      name: mx_holes
+    - operation: subtract
+      name: batcutout
+  topplatecaps:
+    - name: platecut
+    - operation: subtract
+      name: caps
+
+pcbs:
+  SkofTopPlate:
+    template: kicad8
+    outlines:
+      main:
+        outline: platecut
+    footprints:
+  SkofBottomPlate:
+    template: kicad8
+    outlines:
+      main:
+        outline: board
+    footprints:
+      mx_hotswap:
+        what: mxswitch
+        where: true
+        params:
+          reversible: true
+          hotswap: true
+          include_keycap: true
+          include_traces_vias: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      diode:
+        what: diode
+        where: true
+        params:
+          reversible: true
+          include_traces_vias: true
+          from: "{{colrow}}"
+          to: "{{row_net}}"
+        adjust:
+          shift: [0, -5]
+      nicenano:
+        what: nicenano
+        params:
+          reversible: true
+          reverse_mount: false
+        where: 
+          ref.aggregate.parts: [matrix_inner_nums, matrix_inner_nums]
+          shift: [24,1]
+      powerswitch:
+        what: powerswitch
+        where: 
+          ref.aggregate.parts: [matrix_inner_nums, matrix_inner_nums]
+          shift: [5,16]
+          rotate: 90
+        params:
+          reversible: true
+      batteryjst:
+        what: batteryjst
+        where:
+          ref.aggregate.parts: [matrix_inner_nums, matrix_inner_nums]
+          shift: [31,-60]
+          rotate: 270
+        params:
+          reversible: true
+      
+

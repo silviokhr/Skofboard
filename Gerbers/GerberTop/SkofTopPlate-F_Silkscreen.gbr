@@ -1,0 +1,15 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,9.0.1*%
+%TF.CreationDate,2026-06-11T15:55:01+02:00*%
+%TF.ProjectId,SkofTopPlate,536b6f66-546f-4705-906c-6174652e6b69,v1.0.0*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,Legend,Top*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 9.0.1) date 2026-06-11 15:55:01*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+G04 APERTURE END LIST*
+M02*

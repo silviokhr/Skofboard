@@ -1,0 +1,5 @@
+config SKOFBOARD_LEFT
+    def_bool $(shields_list_contains,Skofboard_left)
+
+config SKOFBOARD_RIGHT
+    def_bool $(shields_list_contains,Skofboard_right)

@@ -1,0 +1,16 @@
+if SKOFBOARD_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "Skofboard"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SKOFBOARD_LEFT || SKOFBOARD_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif
