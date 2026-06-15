@@ -5,28 +5,161 @@
 </div>
 
 ## Features
-- Split for ergonomic typing reducing wrist strain
-- Ortholinear layout with 3 Thumb buttons reducing finger travel
-- Gasket-mounted stabilizers for a dampened sound profile and soft keystroke feel
-- Reversible PCB for left/right-hand use using a single PCB design
-- Easily customizable keymap via ZMK Studio
-- Hot swappable switches for easy modification
-- Wireless connectivity via Nice!Nano v2
 
-## Keymap
+- **Ergonomic split design** — reduces wrist strain and promotes a more neutral typing position
+- **Ortholinear layout** — aligns keys in a grid, reducing finger travel distance with 3 dedicated thumb buttons
+- **Gasket-mounted PCB** — provides a dampened sound profile and soft keystroke feel
+- **Magnetic closure** — enables quick assembly and disassembly without tools
+- **Reversible PCB design** — single PCB works for both left and right halves
+- **Wireless connectivity** — powered by the nice!nano v2.0 microcontroller
+- **Hot-swappable switches** — easily swap or customize switches without soldering
+- **ZMK firmware support** — fully customizable keymap via ZMK Studio
 
-The default keymap is incomplete. Key display may vary by region. To customize:
-- Access the **&studio_unlock** key on the left half (column 1, row 2)
+## Getting Started
+
+### Default Keymap
+The default keymap is currently a placeholder and varies by region. To customize your keyboard, access the **studio_unlock** key on the left half at **column 1, row 2** to enter configuration mode in ZMK Studio.
+
+---
 
 ## Case
 
-**Topplate**
-* Material:         Polycarbonate (PC)   
-* Surface Finish:   Blue-Tinted Vapor Polishing
+All case parts are CNC machined. Material selection significantly impacts sound profile. Rigid aluminum base dampens resonance while polycarbonate top provides acoustic transparency. Rounded internal surfaces minimize harsh reflections for refined keystroke sound. (STL files are included for 3D-printed case variants.) 
 
-**Bottom plate**
-* Material:         Aluminum 6061
-* Surface Finish:   Bead blasting & Anodizing 
+### Case Materials
+| Part | Material | Surface Finish |
+|------|----------|--------|
+| Top casing | Polycarbonate (PC) | Blue-tinted vapor polishing | 
+| Bottom casing | Aluminum 6061 | Bead blasting + anodizing |
+
+---
+
+## Hardware Components
+
+### Magnets
+
+Magnet cutouts are intentionally oversized to ensure proper fit during assembly.
+
+| Type | Diameter | Thickness | Cutout Diameter | Cutout Depth | Qty per Half |
+|------|----------|-----------|-----------------|--------------|--------------|
+| Corner magnet | 4 mm | 3 mm | 4.1 mm | 3 mm | 8 |
+| Edge magnet | 2 mm | 3 mm | 2.1 mm | 3 mm | 16 |
+
+**Material:** Neodymium disc magnet
+
+### Gasket-Foam
+
+Poron foam provides dampening and spacing for the gasket mounting system.
+
+| Type | Dimensions (L × W × H) | Qty per Half |
+|------|--------|---------|---------|
+| Large foam strip | 4.5 × 7 × 2 mm | 6 |
+| Small foam strip | 4.5 × 4 × 2 mm | 2 |
+
+**Material:** Poron
+
+### Rubber Feet
+
+Feet provide elevation and grip on desk surfaces.
+
+| Component | Dimensions | Qty per Half |
+|-----------|-----------|--------------|
+| Foot cutout (in case) | ⌀8 mm × 1.5 mm depth | 4 |
+| Rubber foot | ⌀8 mm × 1.6 mm thickness | 4 |
+
+**Material:** Natural rubber
+**Protrusion:** Minimum 0.1 mm above case bottom for optimal grip
+
+### Microcontroller
+
+| Component | Qty per Half |
+|-----------|--------------|
+| nice!nano v2.0 | 1 |
+
+### Battery
+
+The battery cutout on the top plate is shared with the battery connector jack, limiting usable space. Choose batteries within these **optimal dimensions**:
+- **Height:** 50 mm
+- **Width:** 20 mm  
+- **Depth:** 30 mm
+
+⚠️ **Constraints:** Taller batteries are possible, but wider or longer batteries are not recommended and may not fit reliably.
+
+| Component | Specification | Qty per Half |
+|-----------|---------------|--------------|
+| Battery | 3.7V LiPo, 250 mAh, model 502030, 2P-PH connector | 1 |
+| Battery connector | S2B-PH-K-S(LF)(SN) | 1 |
+
+**Voltage:** 3.7V 
+**Chemistry:** LiPo
+**Connector:** 2-pin JST-PH
+
+### Power Switch
+
+| Component | Part Number | Qty per Half |
+|-----------|-------------|--------------|
+| Power switch | MSK12C02 | 1 |
+
+**Type:** SMD slide switch
+**Function:** Disconnects battery from microcontroller
+
+### Hotswap Sockets
+
+| Component | Type | Qty per Half |
+|-----------|-------------|--------------|
+| Kailh Hotswap Socket| MX-format | 30 |
+
+**Function:** Enables switch hotswap
+
+### Switches (Keyswitches)
+
+| Component | Type | Qty per Half |
+|-----------|------|--------------|
+| Keyswitch | MX-format (any compatible switch) | 30 |
+
+**Mounting:** Hot-swappable PCB sockets
+
+### Diodes
+
+| Component | Part Number | Package | Qty per Half |
+|-----------|-------------|---------|--------------|
+| Protection diode | 1N4148W | SOD-123 | 30 |
+
+**Purpose:** Protects against reverse polarity and back-EMF from switches
+
+---
+
+## Complete Bill of Materials (BOM)
+
+| Qty (per half) | Component | Type |
+|---|-----------|------|-------|
+| 8 | Corner magnet | Neodymium disc, ⌀4mm × 3mm |
+| 16 | Edge magnet | Neodymium disc, ⌀2mm × 3mm |
+| 6 | Large gasket foam | Poron, 4.5 × 7 × 2mm |
+| 2 | Small gasket foam | Poron, 4.5 × 4 × 2mm |
+| 4 | Rubber feet | Natural rubber, ⌀8 × 1.6mm |
+| 1 | Microcontroller | nice!nano v2.0 |
+| 1 | Battery | 3.7V LiPo 250mAh 502030 |
+| 1 | Battery connector | S2B-PH-K-S(LF)(SN) |
+| 1 | Power switch | MSK12C02 |
+| 30 | Keyswitch | MX-format |
+| 30 | Diode | 1N4148W |
+| 30 | Hotswap Socket | MX-format |
+
+---
+
+## PCB Specifications
+
+- **Layer count:** 2-layer
+- **Material:** FR-4, 1.6 mm thickness
+- **Copper weight:** 1 oz
+- **Surface finish:** LeadFree HASL
+
+**Design Note:** 
+The PCB switchplate (SkofTopPlate.kicad_pcb) is 1.6mm FR4 (standard manufacturing thickness). Standard MX switches are designed for 1.5mm plates. Due to this 0.1mm difference, switches fit securely but may feel slightly tight.
+
+---
 
 ## Credits
+
 This project uses open-source hardware footprints licensed under MIT and CC-BY-NC-SA 4.0 by Marco Massarelli (@ceoloide) and contributors.
