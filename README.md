@@ -7,17 +7,17 @@
 ## Features
 
 - **Ergonomic split design** — reduces wrist strain and promotes a more neutral typing position
-- **Ortholinear layout** — aligns keys in a grid, reducing finger travel distance with 3 dedicated thumb buttons
-- **Gasket-mounted PCB** — provides a dampened sound profile and soft keystroke feel
-- **Magnetic closure** — enables quick assembly and disassembly without tools
-- **Reversible PCB design** — single PCB works for both left and right halves
-- **Wireless connectivity** — powered by the nice!nano v2.0 microcontroller
+- **Ortholinear layout**     — aligns keys in a grid, reducing finger travel distance with 3 dedicated thumb buttons
+- **Gasket-mounted PCB**     — provides a dampened sound profile and soft keystroke feel
+- **Magnetic closure**       — enables quick assembly and disassembly without tools
+- **Reversible PCB design**  — single PCB works for both left and right halves
 - **Hot-swappable switches** — easily swap or customize switches without soldering
-- **ZMK firmware support** — fully customizable keymap via ZMK Studio
+- **ZMK firmware support**   — fully customizable keymap via ZMK Studio
+- **Wireless connectivity**  — powered by the nice!nano v2.0 microcontroller
 
-## Getting Started
+---
 
-### Default Keymap
+## Default Keymap
 The default keymap is currently a placeholder and varies by region. To customize your keyboard, access the **studio_unlock** key on the left half at **column 1, row 2** to enter configuration mode in ZMK Studio.
 
 ---
@@ -34,41 +34,34 @@ All case parts are CNC machined. Material selection significantly impacts sound 
 
 ---
 
-## Hardware Components
+## Internal Components  
 
 ### Magnets
 
 Magnet cutouts are intentionally oversized to ensure proper fit during assembly.
 
-| Type | Diameter | Thickness | Cutout Diameter | Cutout Depth | Qty per Half |
-|------|----------|-----------|-----------------|--------------|--------------|
-| Corner magnet | 4 mm | 3 mm | 4.1 mm | 3 mm | 8 |
-| Edge magnet | 2 mm | 3 mm | 2.1 mm | 3 mm | 16 |
-
-**Material:** Neodymium disc magnet
+| Type | Material | Diameter | Thickness | Cutout Diameter | Cutout Depth | Qty per Half | 
+|------|----------|-----------|-----------------|--------------|--------------|--------------|
+| Corner disc magnet| Neodymium | 4 mm | 3 mm | 4.1 mm | 3 mm | 8 |
+| Edge disc magnet | Neodymium | 2 mm | 3 mm | 2.1 mm | 3 mm | 16 |
 
 ### Gasket-Foam
 
 Poron foam provides dampening and spacing for the gasket mounting system.
 
 | Type | Dimensions (L × W × H) | Qty per Half |
-|------|--------|---------|---------|
+|------|--------|---------|
 | Large foam strip | 4.5 × 7 × 2 mm | 6 |
 | Small foam strip | 4.5 × 4 × 2 mm | 2 |
-
-**Material:** Poron
 
 ### Rubber Feet
 
 Feet provide elevation and grip on desk surfaces.
+* **Protrusion:** Minimum 0.1 mm above case bottom for optimal grip
 
-| Component | Dimensions | Qty per Half |
-|-----------|-----------|--------------|
-| Foot cutout (in case) | ⌀8 mm × 1.5 mm depth | 4 |
-| Rubber foot | ⌀8 mm × 1.6 mm thickness | 4 |
-
-**Material:** Natural rubber
-**Protrusion:** Minimum 0.1 mm above case bottom for optimal grip
+| Component | Diameter | Thickness | Cutout Diameter | Cutout Depth | Qty per Half |
+|-----------|-----------|--------------|--------------|--------------|--------------|
+| Rubber foot | 8 mm | 1.6 mm | 8 mm |  1.5 mm | 4 |
 
 ### Microcontroller
 
@@ -90,10 +83,6 @@ The battery cutout on the top plate is shared with the battery connector jack, l
 | Battery | 3.7V LiPo, 250 mAh, model 502030, 2P-PH connector | 1 |
 | Battery connector | S2B-PH-K-S(LF)(SN) | 1 |
 
-**Voltage:** 3.7V 
-**Chemistry:** LiPo
-**Connector:** 2-pin JST-PH
-
 ### Power Switch
 
 | Component | Part Number | Qty per Half |
@@ -107,9 +96,7 @@ The battery cutout on the top plate is shared with the battery connector jack, l
 
 | Component | Type | Qty per Half |
 |-----------|-------------|--------------|
-| Kailh Hotswap Socket| MX-format | 30 |
-
-**Function:** Enables switch hotswap
+| Hotswap Socket| Kailh MX-format | 30 |
 
 ### Switches (Keyswitches)
 
@@ -121,18 +108,20 @@ The battery cutout on the top plate is shared with the battery connector jack, l
 
 ### Diodes
 
+Protects against reverse polarity and back-EMF from switches
+
 | Component | Part Number | Package | Qty per Half |
 |-----------|-------------|---------|--------------|
 | Protection diode | 1N4148W | SOD-123 | 30 |
 
-**Purpose:** Protects against reverse polarity and back-EMF from switches
+
 
 ---
 
 ## Complete Bill of Materials (BOM)
 
 | Qty (per half) | Component | Type |
-|---|-----------|------|-------|
+|---|-----------|------|
 | 8 | Corner magnet | Neodymium disc, ⌀4mm × 3mm |
 | 16 | Edge magnet | Neodymium disc, ⌀2mm × 3mm |
 | 6 | Large gasket foam | Poron, 4.5 × 7 × 2mm |
