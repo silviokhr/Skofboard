@@ -81,10 +81,12 @@ The default keymap is currently a placeholder and varies by region. To customize
 > Build is **per half** — repeat all steps for both. The PCB is reversible, so each half is configured by solder jumpers (step 3) before anything is populated.
 
 **Case prep**
+
 1. **Attach the feet** to the bottom casing.
 2. **Glue in the magnets** (corner and edge) into their cutouts. ⚠️ Check polarity *before* gluing — all magnets must be oriented so the top and bottom casings attract when closed. (See Part Notes for fit.)
 
 **PCB**
+
 3. **Set the handedness** — close the solder-jumper bridges that configure the PCB for the left or right half (per the build files), **before** soldering any sockets:
    - **Microcontroller** jumpers — front (top) side
    - **Battery** jumpers — back (bottom) side
@@ -92,14 +94,17 @@ The default keymap is currently a placeholder and varies by region. To customize
 5. **Mount the nice!nano v2.0** — seat the header pins in the sockets, then mount the controller **face-down (component side against the PCB, bare back facing up)** and solder the pins so it stays removable.
 
 **Power test** *(before switches — easier to fix solder issues now)*
+
 6. **Connect the battery** with the power switch **off**, checking polarity.
 7. **Flash and test** — flash the firmware (double-tap reset for the bootloader), power on, and confirm the half boots, pairs with the other half, and connects to your host.
 
 **Plate + switches**
+
 8. **Add the gasket foam** — place the foam strips in their positions per the build files.
 9. **Install switches** — straighten any bent pins, fit 3–4 corner switches first to align the plate, then drop in the rest through the switchplate.
 
 **Finish**
+
 10. **Final check** — verify every key registers.
 11. **Close the case** — join the top and bottom casings via the magnetic closure.
 
