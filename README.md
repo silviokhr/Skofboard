@@ -1,7 +1,7 @@
 # Split Ergonomic Wireless Gasket-Mounted Keyboard
 
 <div align="center">
-  <img src="./Images/render.jpeg" alt="Split Ergonomic Keyboard" style="border-radius: 12px; max-width: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+  <img src="./Images/render.png" alt="Split Ergonomic Keyboard" style="border-radius: 12px; max-width: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
 </div>
 
 ## Features
@@ -40,6 +40,8 @@ Quantities are **per half** — a complete keyboard requires two of everything b
 | 2 | Small gasket foam | Poron, 4.5 × 4 × 2 mm |
 | 4 | Rubber foot | ⌀8 × 1.6 mm |
 | 1 | Microcontroller | nice!nano v2.0 |
+| 2 | Microcontroller socket 12-pin | Mill Max 315-43-112-41-003000 |
+| 24 | Socket pins | Mill Max 3320-0-00-15-00-00-03-0 |
 | 1 | Battery | 3.7 V LiPo, 250 mAh, model 502030, 2P-PH connector |
 | 1 | Battery connector | S2B-PH-K-S(LF)(SN) |
 | 1 | Power switch | MSK12C02 (SMD slide switch) |
@@ -74,16 +76,32 @@ The default keymap is currently a placeholder and varies by region. To customize
 
 ---
 
-## Preliminary Assembly Guide
+## Assembly Guide
 
-1. **Attach Feet** - attach the rubber feet to the bottom casing.
-2. **Glue in the magnets** — corner and edge magnets into their cutouts (see Part Notes for fit).
-3. **Populate the PCB** — solder diodes, hotswap sockets, the power switch, the battery connector, and the microcontroller sockets.
-4. **Mount the electronics** — seat the nice!nano v2.0 and connect the battery.
-5. **Add foam** — place gasket foam strips on the Switchplate.
-6. **Install switches** — drop MX switches into the hotswap sockets through the plate.
-7. **Flash firmware** — load the firmware and verify connectivity.
-8. **Close the case** — join the top and bottom halves via the magnetic closure.
+> Build is **per half** — repeat all steps for both. The PCB is reversible, so each half is configured by solder jumpers (step 3) before anything is populated.
+
+**Case prep**
+1. **Attach the feet** to the bottom casing.
+2. **Glue in the magnets** (corner and edge) into their cutouts. ⚠️ Check polarity *before* gluing — all magnets must be oriented so the top and bottom casings attract when closed. (See Part Notes for fit.)
+
+**PCB**
+3. **Set the handedness** — close the solder-jumper bridges that configure the PCB for the left or right half (per the build files), **before** soldering any sockets:
+   - **Microcontroller** jumpers — front (top) side
+   - **Battery** jumpers — back (bottom) side
+4. **Populate the PCB** — on the **back**, solder the diodes and hotswap sockets; on the **front**, solder the power switch, battery connector, and microcontroller sockets.
+5. **Mount the nice!nano v2.0** — seat the header pins in the sockets, then mount the controller **face-down (component side against the PCB, bare back facing up)** and solder the pins so it stays removable.
+
+**Power test** *(before switches — easier to fix solder issues now)*
+6. **Connect the battery** with the power switch **off**, checking polarity.
+7. **Flash and test** — flash the firmware (double-tap reset for the bootloader), power on, and confirm the half boots, pairs with the other half, and connects to your host.
+
+**Plate + switches**
+8. **Add the gasket foam** — place the foam strips in their positions per the build files.
+9. **Install switches** — straighten any bent pins, fit 3–4 corner switches first to align the plate, then drop in the rest through the switchplate.
+
+**Finish**
+10. **Final check** — verify every key registers.
+11. **Close the case** — join the top and bottom casings via the magnetic closure.
 
 ---
 
